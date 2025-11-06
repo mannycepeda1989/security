@@ -1,0 +1,699 @@
+terraform_version: "1.7.5"
+independent_service_accounts:
+  wf20-mlworker:
+    enabled: true
+    description: <placeholder>
+
+cross_project_access_mapping:
+  config-connector@wildfire-sre.iam.gserviceaccount.com:
+    roles:
+      - roles/logging.admin
+  cloud-build-gitlab@wildfire-sre.iam.gserviceaccount.com:
+    roles:
+      - roles/compute.storageAdmin
+      - roles/compute.imageUser
+      - roles/container.developer
+  terraform@wildfire-prod-249322.iam.gserviceaccount.com:
+     roles:
+      - roles/monitoring.metricsScopesAdmin
+  terraform@wildfire-sre.iam.gserviceaccount.com:
+    roles:
+      - roles/monitoring.metricsScopesAdmin
+  736077100143-compute@developer.gserviceaccount.com:
+    roles:
+      - roles/compute.viewer
+      - roles/pubsub.publisher
+      - roles/monitoring.viewer
+  sre-workflow-invoker@wildfire-sre.iam.gserviceaccount.com:
+    roles:
+      - roles/workflows.invoker
+
+service_account_mapping:
+  keda-operator:
+    enabled: true
+    description: <palceholder>
+    roles:
+      - roles/monitoring.viewer
+  bigquery:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+  bigtable:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+  custom-metrics-adapter:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.viewer
+  deploy:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/cloudfunctions.developer
+      - roles/cloudfunctions.serviceAgent
+      - roles/compute.admin
+      - roles/container.viewer
+      - roles/container.clusterViewer
+      - roles/dns.reader
+      - roles/iam.serviceAccountUser
+      - roles/logging.admin
+      - roles/monitoring.metricWriter
+      - roles/redis.admin 
+      - roles/secretmanager.admin
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/storage.objectViewer
+      - roles/pubsub.viewer
+      - roles/compute.imageUser
+      - roles/cloudscheduler.admin
+      - roles/workflows.admin
+      - roles/iap.tunnelResourceAccessor
+      - roles/monitoring.alertPolicyEditor
+      - roles/monitoring.notificationChannelViewer
+      - roles/viewer
+  external-dns:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/dns.admin
+      - roles/iam.serviceAccountTokenCreator
+  external-secrets:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/secretmanager.admin
+  gvs20-pubsub2bt:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+  gvs20-webservice:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/logging.logWriter
+      - roles/monitoring.metricWriter
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/stackdriver.resourceMetadata.writer
+  gvs20-webservice-url:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+  metric-writer:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/logging.logWriter
+      - roles/monitoring.metricWriter
+  grafana-metrics:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.viewer
+      - roles/iam.serviceAccountUser
+  pubsub:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  sa-argocd:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/container.admin
+  scalein-mgr:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/compute.viewer
+      - roles/logging.logWriter
+  secretmanager:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/secretmanager.secretAccessor
+  storage:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+  wf20-acm:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-api-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.publisher
+      - roles/pubsub.subscriber
+      - roles/storage.admin
+      - roles/iam.serviceAccountTokenCreator
+  wf20-appweb-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf20-appworker:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf20-devicelicense:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+  wf20-dynamicverdictservice:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-ec2panos:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf20-ec2portal:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf20-ec2sla:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf20-ec2telemetry:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+      - roles/iam.serviceAccountTokenCreator
+  wf20-emailer:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf20-job-dispatch:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-loadapikey2bq:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf20-loadapikey2cache:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-loadenforcementmode2cache:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-loaddevice2ps:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+  wf20-lowpriorityworker:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+      - roles/iam.serviceAccountTokenCreator
+  wf20-lpportal:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.admin
+      - roles/iam.serviceAccountTokenCreator
+  wf20-monitor-gvs20-producer:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-notifier:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf20-notifier-reconcile:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.admin
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf20-notifier-rabbitmq:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.user
+      - roles/pubsub.publisher
+  wf20-portal-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-updateverdict:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.subscriber
+  wf20-prioritysubscriber:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.viewer
+      - roles/iam.serviceAccountTokenCreator
+  wf20-thermitepubsubforwarder:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf20-trapapi-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf20-scm-hvda:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.metricWriter
+  wf20-scmapi-regional:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.jobUser
+      - roles/monitoring.metricWriter
+      - roles/logging.logWriter      
+  wf30-analysis-planner:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/logging.logWriter
+      - roles/pubsub.publisher
+      - roles/pubsub.subscriber
+      - roles/iam.serviceAccountTokenCreator
+  wf30-eb-api-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountTokenCreator
+  wf30-mica-apiserver:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+      - roles/storage.objectAdmin
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf30-neo-apiserver:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.metricWriter
+  wf30-airs-api-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.objectAdmin
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wf30-horizonx-api-server:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/storage.objectAdmin
+      - roles/monitoring.metricWriter
+      - roles/iam.serviceAccountTokenCreator
+  wildfire-hvda:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/logging.logWriter
+      - roles/monitoring.metricWriter
+      - roles/monitoring.viewer
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/secretmanager.secretAccessor
+      - roles/pubsub.editor
+  wildfire-infra:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/compute.viewer
+      - roles/iam.serviceAccountUser
+      - roles/logging.logWriter
+      - roles/monitoring.metricWriter
+      - roles/monitoring.viewer
+      - roles/compute.instanceAdmin.v1
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/pubsub.editor
+      - roles/secretmanager.secretAccessor
+  wlid-operator-admin:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/iam.serviceAccountAdmin
+      - roles/container.admin
+  wildfire-pu:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/compute.viewer
+      - roles/logging.logWriter
+      - roles/logging.viewer
+      - roles/monitoring.metricWriter
+      - roles/monitoring.viewer
+      - roles/compute.instanceAdmin.v1
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/pubsub.editor
+      - roles/secretmanager.secretAccessor
+      - roles/redis.admin
+      - roles/cloudfunctions.developer  
+      - roles/cloudfunctions.serviceAgent 
+      - roles/pubsub.viewer
+  config-connector:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+      - roles/bigtable.admin
+      - roles/logging.admin
+      - roles/monitoring.admin
+      - roles/pubsub.admin
+      - roles/storage.admin
+      - roles/redis.admin
+      - roles/secretmanager.admin
+      - roles/iam.serviceAccountAdmin
+      - roles/iam.serviceAccountUser
+      - roles/run.admin
+      - roles/cloudscheduler.admin
+      - roles/cloudfunctions.admin
+      - roles/cloudsql.admin
+  wf20-jira-service:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigquery.admin
+  wf30-sa-windows:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/pubsub.admin
+      - roles/storage.admin
+      - roles/logging.logWriter      
+  sre-cloud-function-invoker:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/monitoring.metricWriter
+      - roles/cloudfunctions.invoker
+      - roles/cloudscheduler.admin
+      - roles/workflows.invoker
+  sre-workflow-invoker:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/secretmanager.secretVersionManager
+      - roles/secretmanager.viewer
+      - roles/storage.objectAdmin
+      - roles/logging.logWriter
+      - roles/workflows.invoker
+      - roles/compute.viewer
+      - roles/pubsub.editor
+      - roles/run.admin
+      - roles/cloudscheduler.jobRunner
+  wf20-testrunner-async:
+     enabled: true
+     description: <placeholder>
+     roles:
+         - roles/pubsub.editor
+         - roles/logging.viewer
+  wf20-testrunner:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/bigtable.admin
+      - roles/pubsub.editor
+  terraform:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/logging.logWriter
+      - roles/monitoring.metricWriter
+      - roles/monitoring.viewer
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/bigquery.admin
+      - roles/bigtable.admin
+      - roles/cloudkms.admin
+      - roles/compute.admin
+      - roles/compute.networkAdmin
+      - roles/compute.instanceAdmin.v1
+      - roles/container.admin
+      - roles/dns.admin
+      - roles/logging.admin
+      - roles/monitoring.admin
+      - roles/pubsub.admin
+      - roles/storage.admin
+      - roles/storage.objectAdmin
+      - roles/redis.admin
+      - roles/secretmanager.admin
+      - roles/iam.roleAdmin
+      - roles/iam.serviceAccountAdmin
+      - roles/iam.serviceAccountUser
+      - roles/iam.serviceAccountTokenCreator
+      - roles/iap.tunnelResourceAccessor
+      - roles/resourcemanager.projectIamAdmin
+      - roles/run.admin
+      - roles/cloudscheduler.admin
+      - roles/cloudfunctions.admin
+      - roles/workflows.admin
+      - roles/viewer
+  deploy:
+    enabled: true
+    description: <placeholder>
+    roles:
+      - roles/cloudbuild.builds.builder
+      - roles/cloudscheduler.admin
+      - roles/compute.admin
+      - roles/compute.osLogin
+      - roles/compute.imageUser
+      - roles/compute.osAdminLogin
+      - roles/cloudfunctions.serviceAgent
+      - roles/cloudfunctions.developer
+      - roles/iam.serviceAccountUser
+      - roles/iap.tunnelResourceAccessor
+      - roles/logging.admin
+      - roles/monitoring.alertPolicyEditor
+      - roles/monitoring.metricWriter
+      - roles/secretmanager.admin
+      - roles/storage.objectAdmin
+      - roles/stackdriver.resourceMetadata.writer
+      - roles/monitoring.notificationChannelViewer
+      - roles/workflows.admin
+      - roles/redis.admin
+      - roles/dns.reader
+      - roles/container.viewer
+      - roles/container.clusterViewer
+      - roles/pubsub.viewer
+      - roles/viewer
+
+role_group_mapping:
+  wildfire-sre:
+    roles:
+      - roles/appengine.appAdmin
+      - roles/bigtable.admin
+      - roles/compute.viewer
+      - roles/compute.networkViewer
+      - roles/compute.osAdminLogin
+      - roles/compute.osLogin
+      - roles/compute.storageAdmin
+      - roles/cloudfunctions.admin
+      - roles/container.admin
+      - roles/datastore.user
+      - roles/iam.serviceAccountUser
+      - roles/iap.tunnelResourceAccessor
+      - roles/logging.admin
+      - roles/monitoring.admin
+      - roles/pubsub.admin
+      - roles/source.admin
+      - roles/storage.admin
+      - roles/storage.objectAdmin
+      - roles/viewer
+  wildfire-dev:
+    roles:
+      - roles/appengine.appViewer
+      - roles/bigquery.dataViewer
+      - roles/bigtable.reader
+      - roles/bigtable.user
+      - roles/compute.viewer
+      - roles/compute.osLogin
+      - roles/compute.networkUser
+      - roles/container.viewer
+      - roles/datastore.user
+      - roles/iap.tunnelResourceAccessor
+      - roles/logging.viewer
+      - roles/logging.privateLogViewer
+      - roles/monitoring.viewer
+      - roles/pubsub.viewer
+      - roles/source.reader
+      - roles/storage.objectViewer
+      - roles/iam.roleViewer
+      - roles/iam.serviceAccountViewer
+      - roles/dns.reader
+      - roles/cloudfunctions.viewer
+      - roles/viewer
+  wildfire-dba:
+    roles:
+      - roles/bigquery.admin
+      - roles/bigtable.admin
+      - roles/cloudsql.admin
+      - roles/compute.osAdminLogin
+      - roles/compute.osLogin
+      - roles/compute.storageAdmin
+      - roles/compute.viewer
+      - roles/iap.tunnelResourceAccessor
+      - roles/spanner.admin
+      - roles/storage.admin
+      - roles/secretmanager.secretAccessor
+  wildfire-qa:
+    roles:
+      - roles/compute.viewer
+      - roles/compute.networkUser
+      - roles/compute.osAdminLogin
+      - roles/compute.osLogin
+      - roles/container.admin
+      - roles/iap.tunnelResourceAccessor
+      - roles/logging.admin
+      - roles/logging.viewer
+      - roles/source.reader
+      - roles/viewer
+  wildfire-analyzer:
+    roles:
+      - roles/compute.admin
+      - roles/iap.tunnelResourceAccessor
+  wildfire-sre-sadmin:
+    roles:
+      - roles/appengine.appAdmin
+      - roles/bigtable.admin
+      - roles/compute.admin
+      - roles/compute.networkAdmin
+      - roles/compute.osAdminLogin
+      - roles/compute.osLogin
+      - roles/compute.storageAdmin
+      - roles/cloudfunctions.admin
+      - roles/container.admin
+      - roles/datastore.owner
+      - roles/iam.serviceAccountUser
+      - roles/iam.serviceAccountAdmin
+      - roles/iap.tunnelResourceAccessor
+      - roles/logging.admin
+      - roles/monitoring.admin
+      - roles/pubsub.admin
+      - roles/resourcemanager.projectIamAdmin
+      - roles/source.admin
+      - roles/storage.admin
+      - roles/storage.objectAdmin
+      - roles/workflows.admin
+      - roles/owner
+  gns-prod:
+    roles:
+      - roles/compute.admin
+      - roles/compute.networkAdmin
+      - roles/monitoring.viewer
+  panav-eng:
+    roles:
+      - roles/iap.tunnelResourceAccessor
+      - roles/compute.viewer
+      - roles/bigquery.dataViewer
+      - roles/bigquery.jobUser
+  raven-daily-dev:
+    roles:
+      - roles/iap.tunnelResourceAccessor
+      - roles/compute.viewer
+  wildfire-gns:
+    roles:
+      - roles/viewer
+
+service_account_token_creators:
+  - wildfire-hvda
+  - wildfire-infra
+  - wildfire-vault
+  - wlid-operator-admin
+  - wildfire-pu
+
+service_account_user_group_mapping:
+  deploy:
+    - wildfire-dba
+    - wildfire-dev
+    - wildfire-qa
+    - wildfire-sre
+    - wildfire-sre-sadmin
+  wildfire-hvda:
+    - wildfire-dev
+    - wildfire-qa
+    - wildfire-sre
+    - wildfire-sre-sadmin
+  wildfire-infra:
+    - wildfire-dba
+    - wildfire-dev
+    - wildfire-qa
+    - wildfire-sre
+    - wildfire-sre-sadmin
+  wildfire-pu:
+    - wildfire-dev
+    - wildfire-qa
+    - wildfire-sre
+    - wildfire-sre-sadmin
+  wildfire-vault:
+    - wildfire-sre
+    - wildfire-sre-sadmin
